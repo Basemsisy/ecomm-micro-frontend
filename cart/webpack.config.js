@@ -8,11 +8,12 @@ module.exports = {
   },
   plugins: [
     new ModuleFedrationPlugin({
-        name: "cart",
-        filename: "remoteEntry.js",
-        exposes: {
-          "./CartIndex": "./src/index",
-        },
+      name: "cart",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./CartIndex": "./src/index",
+      },
+      shared: ["faker"],
     }),
     new HTMLWebpackPlugin({
       template: "./public/index.html",
